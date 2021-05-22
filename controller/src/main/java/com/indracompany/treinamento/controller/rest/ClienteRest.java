@@ -14,15 +14,22 @@ import com.indracompany.treinamento.model.service.ClienteService;
 
 @RestController
 @RequestMapping("rest/clientes")
-public class ClienteRest extends GenericCrudRest<Cliente, Long, ClienteService>{
-	
+public class ClienteRest extends GenericCrudRest<Cliente, Long, ClienteService> {
+
 	@Autowired
 	private ClienteService clienteService;
-	
-	@RequestMapping(value = "/buscar-por-cpf/{cpf}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+
+	@RequestMapping(value = "/buscar-por-cpf/{cpf}", method = RequestMethod.GET, produces = {
+			MediaType.APPLICATION_JSON_VALUE })
 	public @ResponseBody ClienteDTO buscarClientePorCpf(@PathVariable String cpf) {
 		ClienteDTO retorno = clienteService.buscarClientePorCpf(cpf);
 		return retorno;
 	}
 
+	@RequestMapping(value = "/buscar-por-nome/{nome}", method = RequestMethod.GET, produces = {
+			MediaType.APPLICATION_JSON_VALUE })
+	public @ResponseBody ClienteDTO buscarClientePorNome(@PathVariable String nome) {
+		ClienteDTO retorno = clienteService.buscarClientePorNome(nome);
+		return retorno;
+	}
 }
