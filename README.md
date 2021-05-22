@@ -33,7 +33,7 @@ Caso não consiga instalar através da interface, copiar o lombok.jar para o dir
 
 	Primeiramente deve-se clonar o repositório no endereço:
 	
-	https://github.com/efmendes/treinamento_2020101.git
+	https://github.com/efmendes/treinamento_202105.git
 	
 	Após o projeto ser clonado, abra o terminal no diretório clonado **treinamento**
 	e utilize os seguintes comandos:
