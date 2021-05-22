@@ -15,8 +15,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Data
-@Getter
-@Setter
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "tb_usuario")
