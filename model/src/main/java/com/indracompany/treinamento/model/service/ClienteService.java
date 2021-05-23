@@ -1,5 +1,7 @@
 package com.indracompany.treinamento.model.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.indracompany.treinamento.exception.AplicacaoException;
@@ -27,6 +29,22 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 		  retorno.setId(cli.getId());
 		  
 		  return retorno;
+	  }
+	  
+	  public ClienteDTO buscarClientePorNome(String nome) {
+		  Optional<Cliente> clienteFiltro = getRepository().findByNome(nome);
+		  
+		  if(clienteFiltro.isEmpty())
+			  throw new AplicacaoException(ExceptionValidacoes.ERRO_NOME_NAO_ENCONTRADO);
+		  
+		  Cliente cliente = clienteFiltro.get();
+		  ClienteDTO clienteDTO = new ClienteDTO();
+		  clienteDTO.setEmail(cliente.getEmail());
+		  clienteDTO.setNome(cliente.getNome());
+		  clienteDTO.setCpf(cliente.getCpf());
+		  clienteDTO.setId(cliente.getId());
+		  
+		  return clienteDTO;
 	  }
 	  
 	  private boolean cpfEhValido(String cpf) {

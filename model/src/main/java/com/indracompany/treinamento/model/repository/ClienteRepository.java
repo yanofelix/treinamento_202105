@@ -1,10 +1,12 @@
 package com.indracompany.treinamento.model.repository;
 
+import java.util.Optional;
+
 import com.indracompany.treinamento.model.entity.Cliente;
 
 public interface ClienteRepository extends GenericCrudRepository<Cliente, Long>{
 	
 	Cliente findByCpf(String cpf);
 
-	Cliente findByNome(String nome);
+	Optional<Cliente> findByNome(String nome);
 }
