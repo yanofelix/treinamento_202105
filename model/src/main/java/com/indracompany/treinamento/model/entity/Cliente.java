@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Table(name = "tb_cliente")
 public class Cliente extends GenericEntity<Long> {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(length = 55)
 	private String nome;

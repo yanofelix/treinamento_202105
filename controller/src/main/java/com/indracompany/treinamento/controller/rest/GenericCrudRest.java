@@ -157,8 +157,9 @@ public abstract class GenericCrudRest<T extends GenericEntity<I>, I, S extends G
 
   @RequestMapping(value = "/", method = RequestMethod.POST)
   public @ResponseBody ResponseEntity<T> salvar(@ApiParam(value = "Objeto entidade a ser cadastrada.", required = true) @Valid final @RequestBody T entity)
-      throws AplicacaoException {
-
+      throws AplicacaoException 
+  {
+	  var a = ""; 
     if (GenericCrudRest.log.isDebugEnabled()) {
 
       GenericCrudRest.log.debug("Realizando a chamada do controller: " + this.getClass().getName() + ".salvar( " + entity.getClass().getName()
