@@ -133,9 +133,5 @@ public abstract class GenericCrudService<T extends GenericEntity<I>, I, R extend
       return repository;
   }
 
-public ClienteDTO buscarClientePorCpf(String cpf) {
-	// TODO Auto-generated method stub
-	return null;
-}
 
 }
