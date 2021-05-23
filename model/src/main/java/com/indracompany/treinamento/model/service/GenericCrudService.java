@@ -17,6 +17,7 @@ import com.indracompany.treinamento.exception.AplicacaoException;
 import com.indracompany.treinamento.exception.AplicacaoExceptionValue;
 import com.indracompany.treinamento.exception.ExceptionValidacoes;
 import com.indracompany.treinamento.exception.ValidacaoCampos;
+import com.indracompany.treinamento.model.dto.ClienteDTO;
 import com.indracompany.treinamento.model.entity.GenericEntity;
 import com.indracompany.treinamento.model.repository.GenericCrudRepository;
 
@@ -131,5 +132,10 @@ public abstract class GenericCrudService<T extends GenericEntity<I>, I, R extend
   public R getRepository() {
       return repository;
   }
+
+public ClienteDTO buscarClientePorCpf(String cpf) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }
