@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.indracompany.treinamento.model.entity.Cliente;
 import com.indracompany.treinamento.model.service.ClienteService;
 
+import io.swagger.annotations.ApiOperation;
+
 
 @RestController()
 @CrossOrigin(origins = "*")
@@ -29,5 +31,13 @@ public class ClienteRest extends GenericCrudRest<Cliente, Long, ClienteService>{
 		Cliente retorno = clienteService.buscarClientePorCpf(cpf);
 		return  new ResponseEntity<>(retorno, HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Retorna a primeira ocorrência.")
+	@RequestMapping(value = "/bucar-por-nome{nome}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	public @ResponseBody ResponseEntity<Cliente> buscarClientePorNome(final @PathVariable String nome) {
+		Cliente retorno = clienteService.buscarClientePorNome(nome);
+		return new ResponseEntity<>(retorno, HttpStatus.OK);
+	} 
+	
 
 }
