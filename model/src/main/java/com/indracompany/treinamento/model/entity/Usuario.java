@@ -11,8 +11,6 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

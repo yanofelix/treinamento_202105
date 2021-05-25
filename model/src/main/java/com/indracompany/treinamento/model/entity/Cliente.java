@@ -11,7 +11,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table(name = "clientes")
+@Table(name = "tb_cliente")
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Cliente extends GenericEntity<Long>{
