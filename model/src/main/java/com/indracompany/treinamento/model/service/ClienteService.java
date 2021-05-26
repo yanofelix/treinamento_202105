@@ -33,4 +33,18 @@ public class ClienteService extends GenericCrudService<Cliente, Long, ClienteRep
 		  return CpfUtil.validaCPF(cpf);
 	  }
 	  
+	  public ClienteDTO buscarClientePorNome (String nome) {
+		  
+		  Cliente cliente = getRepository().findByNome(nome);
+		  
+		  ClienteDTO retorno = new ClienteDTO();
+		  retorno.setEmail(cliente.getEmail());
+		  retorno.setNome(cliente.getNome());
+		  retorno.setCpf(cliente.getCpf());
+		  retorno.setId(cliente.getId());
+		  
+		  return retorno;
+		  
+	  }
+	  
 }
