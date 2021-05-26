@@ -38,7 +38,10 @@ public ClienteDTO buscarClientePorNome(String nome) {
 		  Cliente cli = getRepository().findByNome(nome);
 		  
 		  ClienteDTO retorno = new ClienteDTO();
+		  retorno.setEmail(cli.getEmail());
 		  retorno.setNome(cli.getNome());
+		  retorno.setCpf(cli.getCpf());
+		  retorno.setId(cli.getId());
 		  
 		  return retorno;
 	  }
