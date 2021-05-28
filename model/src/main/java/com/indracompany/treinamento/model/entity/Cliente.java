@@ -16,6 +16,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class Cliente extends GenericEntity<Long>{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8533562883800065810L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
