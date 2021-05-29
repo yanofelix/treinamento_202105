@@ -10,26 +10,30 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@Entity
-@Table(name = "clientes")
 @Data
 @EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "clientes")
 public class Cliente extends GenericEntity<Long>{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(length = 50)
+	@Column(name="nome", length = 50)
 	private String nome;
 	
+	@Column(name="cpf")
 	private String cpf;
 	
+	@Column(name="email")
 	private String email;
 	
+	@Column(name="ativo")	// Vai precisar persistir ativo?
 	private boolean ativo;
 	
+	@Column(name="observacoes")
 	private String observacoes;
-
-	
 }
